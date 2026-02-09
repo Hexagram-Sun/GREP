@@ -1,3 +1,31 @@
-Codes for the GREP framework. Put your wiki dump and hotpotqa data in `../datasets` before running anything.
+# GREP Framework
 
-Run `bash scripts/train.sh` to preprocess the data and build the FAISS/BM25 indices. Once that's done you can run `bash scripts/test.sh` to evaluate the retrieval performance. The main pipeline logic is in `src/pipeline.py` and the DPO training code is in `src/model/dpo_trainer.py`. Note that you might need to change model and dataset paths if your data layout is different.
+This repository contains the code for the GREP framework.
+
+## Data Preparation
+Before running the scripts:
++ place your Wiki dump and HotpotQA data in the datasets directory: `../datasets`
++ place your large language model and embedding model in the model directory: `../models`
+
+## Quick Start
+
+**1. Preprocess & Build Indices**
+Run the training script to preprocess data and build FAISS/BM25 indices:
+```bash
+bash scripts/train.sh
+```
+
+**2. Evaluate**
+Once indexing is complete, evaluate retrieval performance:
+
+```bash
+bash scripts/test.sh
+
+```
+
+## Key Files
+
+* `src/pipeline.py`: Main pipeline logic.
+* `src/model/dpo_trainer.py`: DPO training implementation.
+
+> **Note:** Please ensure model and dataset paths in the scripts match your local directory structure.
