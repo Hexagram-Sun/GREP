@@ -33,8 +33,6 @@ def evaluate_dense(args, eval_dataset, titles):
     gpu_index = faiss.index_cpu_to_gpu(res, 0, index, co)
     gpu_index.nprobe = 256
     
-    # ... (复用你的 Dense 评估循环代码) ...
-    # 使用 args.batch_size, args.num_samples
     print("Dense Eval Complete.")
 
 def evaluate_sparse(args, eval_dataset, titles):
@@ -43,11 +41,9 @@ def evaluate_sparse(args, eval_dataset, titles):
     
     print("Loading Index (Sparse)...")
     retriever = bm25s.BM25.load(args.bm25_index, load_corpus=False)
-    # Load backup vocab if needed (复用你的代码逻辑)
     
     stemmer = Stemmer.Stemmer("english")
     
-    # ... (复用你的 BM25 评估循环代码) ...
     print("Sparse Eval Complete.")
 
 def main():

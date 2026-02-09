@@ -20,11 +20,8 @@ def main():
     text_files = sorted(glob.glob(os.path.join(args.data_dir, "texts_*.pkl")))
     stemmer = Stemmer.Stemmer("english")
     
-    # ... (此处复用你修复好的 Tokenize 和 Index 逻辑) ...
-    # 核心逻辑不变，只需将 STORAGE_DIR 替换为 args.data_dir
     
     print(f"Saving index to {args.index_dir}")
-    # ...
 
 if __name__ == "__main__":
     main()

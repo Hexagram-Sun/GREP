@@ -1,10 +1,8 @@
 #!/bin/bash
 
-# 获取脚本所在目录的上级目录作为项目根目录
 PROJECT_ROOT=$(dirname "$(dirname "$(readlink -f "$0")")")
 cd $PROJECT_ROOT
 
-# 设置相对路径变量
 MODEL_PATH="../models/embeddinggemma"
 WIKI_RAW_PATH="../datasets/wiki_dump/enwiki-20171001-pages-meta-current-withlinks-processed.tar.bz2"
 DATA_PROCESSED_DIR="../datasets/wiki_dump/processed_data"

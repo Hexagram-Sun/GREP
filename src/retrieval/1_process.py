@@ -93,7 +93,6 @@ def main():
                         except json.JSONDecodeError:
                             continue
 
-        # Process remaining
         if batch_texts:
             embeddings = model.encode(batch_texts, convert_to_numpy=True, normalize_embeddings=True)
             shard_embeddings.extend(embeddings)
